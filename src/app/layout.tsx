@@ -1,8 +1,45 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { AuthProvider } from "@/context/authContext";
+//import { AuthProvider } from "@/context/authContext";
+import localFont from 'next/font/local';
 
-import Header from "@/components/Header";
+//import Header from "@/components/Header";
+
+const mark_pro = localFont({
+  src: [
+    {
+      path: '../../public/fonts/MarkPro.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  display: 'swap',
+  variable: '--third-family',
+});
+
+const sansation = localFont({
+  src: [
+    {
+      path: '../../public/fonts/SansationRegular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  display: 'swap',
+  variable: '--font-family',
+});
+
+const sansation_light = localFont({
+  src: [
+    {
+      path: '../../public/fonts/SansationLight.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  display: 'swap',
+  variable: '--second-family',
+});
 
 export const metadata: Metadata = {
   title: "auth template",
@@ -15,13 +52,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <AuthProvider>
-        <body>
+    <html lang="uk-Ua">
+      <body className={`${mark_pro.variable} ${sansation.variable} ${sansation_light.variable}`}>
+          {children}
+      </body>
+
+      {/* <AuthProvider>
+        <body className={`${mark_pro.variable} ${sansation.variable} ${sansation_light.variable}`}>
           <Header />
           {children}
         </body>
-      </AuthProvider>
+      </AuthProvider> */}
     </html>
   );
 }

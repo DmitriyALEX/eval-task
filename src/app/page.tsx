@@ -8,6 +8,9 @@ import PrimaryButton from '@/shared/PrimaryButton'
 import Image from 'next/image'
 
 export default function Home() {
+
+  return <div>Home page</div>
+
   const router = useRouter()
   const { user, fetchedData, googleSignIn, logOut, loading } = useAuth()
 

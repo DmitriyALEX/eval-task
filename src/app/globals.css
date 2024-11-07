@@ -1,19 +1,68 @@
 :root {
-    --background: rgb(178, 133, 190, 0.3);
-}
+	--background: rgb(178, 133, 190, 0.3);
 
-html,
-body {
-    max-width: 100vw;
-    overflow-x: hidden;
-}
-
-body {
-    background: var(--background);
+	--first-sinіy: #5a46f3;
+	--second-temno-sinіy: #3d2eb1;
+	--second-2: #e9e6ff;
+	--text-color: #0c082e;
+	--text-color2: #4f4d5e;
+	--text-tretіy-neaktivniy: #92919c;
+	--eror-12pt-red: #b20909;
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html,
+body {
+	max-width: 100vw;
+	/* min-width: 320px; */
+	overflow-x: hidden;
+  height: 100%;
+}
+body {
+  /* color: ; */
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+input,
+button,
+textarea {
+  font-size: inherit;
+  line-height: inherit;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: transparent;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
 }
