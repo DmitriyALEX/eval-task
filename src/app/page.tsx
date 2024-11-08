@@ -8,7 +8,8 @@ import PrimaryButton from '@/shared/PrimaryButton'
 import Image from 'next/image'
 
 export default function Home() {
-
+ // !! Replace the div with a ready-made component !!
+ // A temporary solution for front-end development
   return <div>Home page</div>
 
   const router = useRouter()

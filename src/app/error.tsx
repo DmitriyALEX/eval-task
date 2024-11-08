@@ -8,7 +8,7 @@ export default function Error({
   reset: () => void;
 }): JSX.Element {
   console.log(error);
-   // Замінити div на готовий компонент.
+   // !! Replace the div with a ready-made component !!
   return (
     <div>
       <h1>Error Page</h1>

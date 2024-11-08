@@ -54,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="uk-Ua">
       <body className={`${mark_pro.variable} ${sansation.variable} ${sansation_light.variable}`}>
-          {children}
+        {children}
       </body>
 
       {/* <AuthProvider>
