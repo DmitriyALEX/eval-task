@@ -1,6 +1,7 @@
+'use client';
 import GitIcon from '../icons/GitIcon';
 import GoogleIcon from '../icons/GoogleIcon';
-import styles from './MainButton.module.css'
+import styles from './MainButton.module.css';
 import clsx from "clsx";
 
 interface MainButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
