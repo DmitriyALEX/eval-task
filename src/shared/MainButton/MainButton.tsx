@@ -13,7 +13,7 @@ export default function MainButton({
   children, 
   className, 
   variant='default', 
-  ...params
+  ...rest
 }: MainButtonProps
 ): JSX.Element 
 {
@@ -27,7 +27,7 @@ export default function MainButton({
     <button 
       className={clsx(styles.btn, styles[variant], className)}
       type='button' 
-      {...params}>
+      {...rest}>
         { icon }
         {children}
     </button>
