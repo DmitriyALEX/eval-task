@@ -23,9 +23,8 @@ const InputPassword = () => {
         }
     }, [inputValue])
 
+    //icon in PUBLIC/ICONS folder
     const eyeIcon = '/icons/eye.svg'
-    const eyegoogle = '/icons/google-logo.svg'
-    const some = '/icons/some.svg'
 
     if (eyeIcon) {
     }
