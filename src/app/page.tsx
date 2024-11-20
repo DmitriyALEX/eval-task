@@ -7,26 +7,12 @@ import Loader from "@/shared/Loader";
 import PrimaryButton from "@/shared/PrimaryButton";
 import Image from "next/image";
 
+import InputPassword from "@/shared/InputPassword";
+
 export default function Home() {
   // !! Replace the div with a ready-made component !!
   // A temporary solution for front-end development
-  return (
-    <div className={styles.homePage_container}>
-      {" "}
-      <div className={styles.platform}>
-        Платформа <br /> для тестових завдань
-      </div>
-      <div className={styles.textInvitation}>
-        Запрошуємо скористатись Eval Test, щоб отримати, виконати, направити і
-        <br />
-        проаналізувати тестові завдання під час процесу працевлаштування
-      </div>
-      <div>
-        <button className={styles.enter}>Увійти</button>
-        <button className={styles.register}>Зареєструватись</button>
-      </div>
-    </div>
-  );
+  return <div>Home page</div>;
 
   const router = useRouter();
   const { user, fetchedData, googleSignIn, logOut, loading } = useAuth();
@@ -66,6 +52,7 @@ export default function Home() {
 
   return (
     <section className={styles.main_container}>
+      {/* {!user ? ( */}
       <>
         <PrimaryButton
           title={"Sign in"}
