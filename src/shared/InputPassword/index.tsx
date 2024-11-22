@@ -38,7 +38,7 @@ const InputPassword = () => {
                 <button onClick={handleChange}>
                     {/* <img src={A ? `${eyeIcon}` : `${eyegoogle}`}  /> */}
 
-                    <img src={some} />
+                    {/* <img src={some} /> */}
                 </button>
             </div>
         </>
