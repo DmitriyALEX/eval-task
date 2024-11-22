@@ -1,8 +1,8 @@
-'use client';
-import GitIcon from '../icons/GitIcon';
-import GoogleIcon from '../icons/GoogleIcon';
-import styles from './MainButton.module.css';
-import clsx from "clsx";
+'use client'
+import GitIcon from '../icons/GitIcon'
+import GoogleIcon from '../icons/GoogleIcon'
+import styles from './MainButton.module.css'
+import clsx from 'clsx'
 
 interface MainButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
   className?: string;
@@ -21,7 +21,7 @@ export default function MainButton({
     variant === 'iconGoogle'? 
       <GoogleIcon/> : 
     variant === 'iconGit' ? 
-      <GitIcon/> : null;
+      <GitIcon/> : null
 
   return (
     <button 
