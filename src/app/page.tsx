@@ -14,18 +14,19 @@ export default function Home() {
     // A temporary solution for front-end development
     return (
         <main className={styles.homePage_container}>
-            <h1 className={styles.platform}>
+            <h1 className={styles.homePage_title}>
                 Платформа <br /> для тестових завдань
             </h1>
-            <p className={styles.textInvitation}>
+            {/* <p className={styles.textInvitation}> */}
+            <p className={styles.homePage_discription}>
                 Запрошуємо скористатись Eval Test, щоб отримати, виконати, направити і
                 <br />
                 проаналізувати тестові завдання під час процесу працевлаштування
             </p>
-            <section className={styles.sign_in_container}>
-                <button className={styles.sign_in}>Увійти</button>
-                <button className={styles.register}>Зареєструватись</button>
-            </section>
+            <div className={styles.homePage_sign_in_container}>
+                <button className={styles.sign_in_btn}>Увійти</button>
+                <button className={styles.register_btn}>Зареєструватись</button>
+            </div>
 
             {/* FOR EXAMPLE */}
             <InputPassword />
