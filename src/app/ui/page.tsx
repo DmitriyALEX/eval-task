@@ -1,13 +1,13 @@
-'use client';
-import MainButton from "@/shared/MainButton/MainButton";
+'use client'
+import MainButton from '@/shared/MainButton/MainButton'
 // A temporary page for displaying UI components.
 export default function uiPage() {
   return (
-    <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', width:'100%', height:"100%", gap:'20px'}}>
+    <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', width:'100%', height:'100%', gap:'20px'}}>
 
       <MainButton 
         variant="iconGoogle" 
-        onClick={()=>{console.log("iconGoogle")}}>
+        onClick={()=>{console.log('iconGoogle')}}>
         Sign in with Google
       </MainButton>
 

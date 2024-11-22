@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 export default function Error({
   error,
@@ -7,7 +7,7 @@ export default function Error({
   error: Error;
   reset: () => void;
 }): JSX.Element {
-  console.log(error);
+  console.log(error)
    // !! Replace the div with a ready-made component !!
   return (
     <div>
