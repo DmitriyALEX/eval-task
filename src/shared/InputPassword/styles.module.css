@@ -1,0 +1,38 @@
+.InputPassword_container {
+  width: 340px;
+  height: 48px;
+  border-radius: 20px;
+  border: 1px solid black;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.InputPassword {
+  width: 280px;
+  margin: 6px;
+  padding: 8px;
+  border-radius: 20px;
+  outline: none !important;
+}
+
+.imageButton {
+  width: 24px;
+  height: 24px;
+}
+
+.checkPassword {
+  color: red;
+  padding-top: 8px;
+  width: 340px;
+}
+
+.InputPassword_container_invalid {
+  border: 2px solid red;
+}
+
+.InputPassword_title {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  padding-top: 8px;
+}

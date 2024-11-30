@@ -1,48 +1,73 @@
 'use client'
 import React, { useEffect, useState } from 'react'
+import styles from './styles.module.css'
 
 const InputPassword = () => {
-    const [inputValue, setInputValue] = useState('')
-    const [inputType, setInputType] = useState('password')
-    const [warning, setWarning] = useState(false)
+  const [inputValue, setInputValue] = useState<string>('')
+  const [inputType, setInputType] = useState<string>('password')
+  const [warning, setWarning] = useState<boolean>(false)
+  const [warningMessage, setWarningMessage] = useState<string>('')
 
-    const handleChange = () => {
-        if (inputType === 'password') {
-            setInputType('text')
-        } else if (inputType === 'text') {
-            setInputType('password')
-        }
+  const eyeOpenIcon = '/icons/eye-open.svg'
+  const eyeClosedIcon = '/icons/eye-closed.svg'
+
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{6,}$/
+
+  const validatePassword = (password:string) => {
+    if (!passwordRegex.test(password)) {
+      setWarning(true)
+
+       if (password.length < 6 &&(!/[A-Z]/.test(password)) 
+        && (!/^[A-Za-z]+$/.test(password)) 
+        && (!/\d/.test(password)) && (!/[!@#$%^&*]/.test(password))) {
+        setWarningMessage('Тільки латинські літери, щонайменше 6 символів, 1 велика літера, цифра та @#$%^&*')
+      }
+    } else {
+      setWarning(false)
+      setWarningMessage('')
     }
+  }
 
-    useEffect(() => {
-        if (inputValue) {
-            console.log(inputValue)
-            if (inputValue.length < 6) {
-                setWarning(true)
-            }
-        }
-    }, [inputValue])
+  const handleInputChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const password = e.target.value
+    setInputValue(password)
+    validatePassword(password)
+  }
 
-    //icon in PUBLIC/ICONS folder
-    const eyeIcon = '/icons/eye.svg'
+  const handleChange = () => {
+    setInputType((prevType) => (prevType === 'password' ? 'text' : 'password'))
+  }
 
-    if (eyeIcon) {
-    }
-
-    return (
-        <>
-            {warning && <p style={{ color: 'red' }}>CHECK PASSWORD</p>}
-
-            <div>
-                <input type={inputType} onChange={e => setInputValue(e.target.value)} />
-                <button onClick={handleChange}>
-                    {/* <img src={A ? `${eyeIcon}` : `${eyegoogle}`}  /> */}
-
-                    {/* <img src={some} /> */}
-                </button>
-            </div>
-        </>
-    )
+  return (
+    <div>
+      <div className={styles.InputPassword_title}>
+        <span>Пароль</span> <span>Забули пароль?</span>
+      </div>
+      <div
+        className={`${styles.InputPassword_container} ${
+          warning ? styles.InputPassword_container_invalid : ''
+        }`}
+      >
+        <input
+          type='text'
+          value={inputValue.replace(/./g, inputType === 'password' ?'*' : '$&')}
+          onChange={handleInputChange}
+          className={styles.InputPassword}
+        />
+        <button
+          className={styles.imageButton}
+          onClick={handleChange}
+          aria-label="Toggle password visibility"
+        >
+          <img
+            src={inputType === 'password' ? eyeClosedIcon : eyeOpenIcon}
+            alt={inputType === 'password' ? 'Show password' : 'Hide password'}
+          />
+        </button>
+      </div>
+      {warning && <p className={styles.checkPassword}>{warningMessage}</p>}
+    </div>
+  )
 }
 
 export default InputPassword
