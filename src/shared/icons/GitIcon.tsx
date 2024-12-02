@@ -16,5 +16,5 @@ export default function GitIcon(): JSX.Element {
       </clipPath>
     </defs>
     </svg>
-  );
+  )
 }

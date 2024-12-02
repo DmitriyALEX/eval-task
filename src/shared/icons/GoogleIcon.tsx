@@ -20,5 +20,5 @@ export default function GoogleIcon(): JSX.Element {
         </clipPath>
       </defs>
     </svg>
-  );
+  )
 }
