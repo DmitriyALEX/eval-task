@@ -1,0 +1,15 @@
+.modalwindow_container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(240, 255, 255, 0.9);
+}
+
+.modalwindow {
+    width: 500px;
+    height: 500px;
+    background-color: antiquewhite;
+}

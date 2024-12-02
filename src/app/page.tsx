@@ -7,31 +7,63 @@ import Loader from "@/shared/Loader";
 import PrimaryButton from "@/shared/PrimaryButton";
 import Image from "next/image";
 
-import InputPassword from "@/shared/InputPassword";
+import InputPassword from '@/shared/InputPassword'
+import ModalWindow from '@/components/ModalWindow'
 
 export default function Home() {
-  // !! Replace the div with a ready-made component !!
-  // A temporary solution for front-end development
-  return (
-    <main className={styles.homePage_container}>
-      <h1 className={styles.homePage_title}>
-        Платформа <br /> для тестових завдань
-      </h1>
-      {/* <p className={styles.textInvitation}> */}
-      <p className={styles.homePage_discription}>
-        Запрошуємо скористатись Eval Test, щоб отримати, виконати, направити і
-        <br />
-        проаналізувати тестові завдання під час процесу працевлаштування
-      </p>
-      <div className={styles.homePage_sign_in_container}>
-        <button className={styles.sign_in_btn}>Увійти</button>
-        <button className={styles.register_btn}>Зареєструватись</button>
-      </div>
+    // !! Replace the div with a ready-made component !!
+    // A temporary solution for front-end development
 
-      {/* FOR EXAMPLE */}
-      <InputPassword />
-      <InputPassword />
-    </main>
+    const [isShow, setIsShow] = useState(false)
+
+    return (
+        <main className={styles.homePage_container}>
+            <h1 className={styles.homePage_title}>
+                Платформа <br /> для тестових завдань
+            </h1>
+            {/* <p className={styles.textInvitation}> */}
+            <p className={styles.homePage_discription}>
+                Запрошуємо скористатись Eval Test, щоб отримати, виконати, направити і
+                <br />
+                проаналізувати тестові завдання під час процесу працевлаштування
+            </p>
+            <div className={styles.homePage_sign_in_container}>
+                <button className={styles.sign_in_btn} onClick={() => setIsShow(!isShow)}>
+                    Увійти
+                </button>
+                <button className={styles.register_btn}>Зареєструватись</button>
+            </div>
+
+            {/* FOR EXAMPLE */}
+            <InputPassword />
+
+            {isShow && <ModalWindow isShow={isShow} setIsShow={setIsShow} />}
+        </main>
+// import InputPassword from "@/shared/InputPassword";
+
+// export default function Home() {
+//   // !! Replace the div with a ready-made component !!
+//   // A temporary solution for front-end development
+//   return (
+//     <main className={styles.homePage_container}>
+//       <h1 className={styles.homePage_title}>
+//         Платформа <br /> для тестових завдань
+//       </h1>
+//       {/* <p className={styles.textInvitation}> */}
+//       <p className={styles.homePage_discription}>
+//         Запрошуємо скористатись Eval Test, щоб отримати, виконати, направити і
+//         <br />
+//         проаналізувати тестові завдання під час процесу працевлаштування
+//       </p>
+//       <div className={styles.homePage_sign_in_container}>
+//         <button className={styles.sign_in_btn}>Увійти</button>
+//         <button className={styles.register_btn}>Зареєструватись</button>
+//       </div>
+
+//       {/* FOR EXAMPLE */}
+//       <InputPassword />
+//       <InputPassword />
+//     </main>
 
     // <div className={styles.homePage_container}>
     //     {' '}
