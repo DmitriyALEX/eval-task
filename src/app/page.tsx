@@ -7,7 +7,9 @@ import Loader from "@/shared/Loader";
 import PrimaryButton from "@/shared/PrimaryButton";
 import Image from "next/image";
 
-import InputPassword from "@/shared/InputPassword";
+
+import InputPassword from '@/shared/InputPassword'
+import InputEmail from '@/shared/InputEmail'
 
 export default function Home() {
   // !! Replace the div with a ready-made component !!
@@ -17,13 +19,34 @@ export default function Home() {
       <h1 className={styles.homePage_title}>
         Платформа <br /> для тестових завдань
       </h1>
-      {/* <p className={styles.textInvitation}> */}
-      <p className={styles.homePage_discription}>
+
+      <p className={styles.textInvitation}> 
         Запрошуємо скористатись Eval Test, щоб отримати, виконати, направити і
         <br />
         проаналізувати тестові завдання під час процесу працевлаштування
       </p>
-      <div className={styles.homePage_sign_in_container}>
+        <button className={styles.sign_in_btn}>Увійти</button>
+
+      {/* FOR EXAMPLE */}
+      <InputPassword />
+      <InputEmail />
+    </main>
+  )
+
+  const router = useRouter()
+  const { user, fetchedData, googleSignIn, logOut, loading } = useAuth()
+
+  const [redirect, setRedirect] = useState<boolean>(false)
+  const [logoLoaded, setLogoLoaded] = useState<boolean>(false)
+
+  const handleSignIn = async () => {
+    try {
+      await googleSignIn()
+    } catch (e) {
+      console.error(e)
+    }
+  }
+<!--       <div className={styles.homePage_sign_in_container}>
         <button className={styles.sign_in_btn}>Увійти</button>
         <button className={styles.register_btn}>Зареєструватись</button>
       </div>
@@ -31,7 +54,7 @@ export default function Home() {
       {/* FOR EXAMPLE */}
       <InputPassword />
       <InputPassword />
-    </main>
+    </main> -->
 
     // <div className={styles.homePage_container}>
     //     {' '}
@@ -50,7 +73,7 @@ export default function Home() {
     // </div>
   );
 
-  const router = useRouter();
+<!--   const router = useRouter();
   const { user, fetchedData, googleSignIn, logOut, loading } = useAuth();
 
   const [redirect, setRedirect] = useState<boolean>(false);
@@ -62,7 +85,7 @@ export default function Home() {
     } catch (e) {
       console.error(e);
     }
-  };
+  }; -->
 
   // const handleSignOut = async () => {
   //     try {
@@ -112,5 +135,6 @@ export default function Home() {
           <></>
       )} */}
     </section>
-  );
+  )
+
 }

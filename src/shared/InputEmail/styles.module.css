@@ -1,0 +1,33 @@
+.InputEmail_container {
+  padding: 8px;
+  border-radius: 20px;
+   width: 340px;
+  height: 48px;
+  border-radius: 20px;
+  border: 1px solid black;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.InputEmail_container_invalid {
+  border: 2px solid red;
+}
+
+.InputEmail_title {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  padding-top: 8px;
+} 
+
+.InputEmail {
+  width: 340px;
+  outline: none !important;
+}
+
+.errorMessage {
+  color: red;
+  padding-top: 8px;
+  width: 340px;
+}
